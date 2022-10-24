@@ -113,15 +113,7 @@ const deleteListing = async (req, res) => {
     }
 }
 
-const getListingByCity = async (req, res) => {
-    const { id } = req.params;
-    const listings = await Listing.find().populate('city')
-    listings.map((listing) => {
-        if (listing.city._id == {id}){
-            return res.status(200).json({listing})
-        }
-    })
-}
+
 
 module.exports = {
     getAllCities,
@@ -134,5 +126,4 @@ module.exports = {
     getListingById,
     updateListing,
     deleteListing,
-    getListingByCity,
 }
