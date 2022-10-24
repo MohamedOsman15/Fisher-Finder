@@ -82,7 +82,7 @@ const CreateListing = async (req, res) => {
 const getListingById = async (req, res) => {
     try {
         const { id } = req.params;
-        const listing = await Listing.findById(id).populate('city')
+        const listing = await Listing.findById(id)
         if (listing) {
             return res.status(200).json({ listing })
         }
@@ -113,6 +113,16 @@ const deleteListing = async (req, res) => {
     }
 }
 
+const listingByCity = async (req, res) => {
+    try {
+        const city = req.params
+        const listings = await Listing.find(city)
+        return res.status(200).json({ listings })
+    } catch (error) {
+        return res.status(500).send(error.message)
+    }
+}
+
 
 
 module.exports = {
@@ -126,4 +136,5 @@ module.exports = {
     getListingById,
     updateListing,
     deleteListing,
+    listingByCity,
 }
