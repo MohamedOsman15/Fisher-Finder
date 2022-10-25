@@ -1,5 +1,4 @@
-const { Listing, City } = require('../models')
-
+const { Listing, City, User } = require('../models')
 
 const addCity = async (req, res) => {
     try {
@@ -123,6 +122,29 @@ const listingByCity = async (req, res) => {
     }
 }
 
+const newUser = async (req, res) => {
+    try {        
+        const user = await new User(req.body)
+        await user.save()
+        return res.status(201).json({
+            user
+        })
+    } catch (error) {
+        return res.status(500).json({error: error.message})
+    }
+    
+}
+
+const allUsers = async(req, res) => {
+    try {
+        const users = await User.find()
+        return res.status(200).json(users)
+    } catch (error) {
+        return res.status(500).send(error.message)
+    }
+}
+
+
 
 
 module.exports = {
@@ -137,4 +159,6 @@ module.exports = {
     updateListing,
     deleteListing,
     listingByCity,
+    newUser,
+    allUsers,
 }

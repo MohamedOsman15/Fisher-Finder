@@ -16,6 +16,9 @@ router.get('/listings/:id', controllers.getListingById)
 router.put('/listings/:id', controllers.updateListing)
 router.delete('/listings/:id', controllers.deleteListing)
 
-router.get('/:id', controllers.listingByCity)
+router.get('/listings/city/:id', controllers.listingByCity)
+
+router.post('/users', controllers.newUser)
+router.get('/users', controllers.allUsers)
 
 module.exports = router
