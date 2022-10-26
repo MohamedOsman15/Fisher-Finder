@@ -25,7 +25,7 @@ const SignUp = () => {
         setNewUser({...newUser, [e.target.id]: e.target.value})
     )
     return (
-        <div>
+        <div className='addPage'>
             <h1>Please Sign Up</h1>
             <p>Username: <input type="text" value={newUser.username} onChange={handleChange} id="username"/></p>
             <p>Password: <input type="text" value={newUser.password} onChange={handleChange} id="password"/></p>

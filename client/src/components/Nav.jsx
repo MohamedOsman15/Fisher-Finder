@@ -5,7 +5,8 @@ const Nav = () => {
         <div className="nav">
             <Link to="/">Home</Link>
             <Link to="/signup">Sign In</Link>
-            <p>About</p>
+            <Link to="/addlisting">Add listing</Link>
+
         </div>
     )
 }

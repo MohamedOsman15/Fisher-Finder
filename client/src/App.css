@@ -1,17 +1,41 @@
-main {
-  text-align: center;
+.home {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: left;
   color: white;
   background-color: black;
   padding: 1em;
   min-height: 2em;
   font-family: 'Georgia';
+}
+
+.citylink {
+  margin-left: 80%;
+}
+
+.title {
+  text-align: center;
+}
+
+.image {
+  height: 200px;
+  width: 300px;
+}
+
+.gallery {
+  text-align: center;
+  display: flex;
+  justify-content: space-around;  
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.addPage {
+  text-align: center;
 }

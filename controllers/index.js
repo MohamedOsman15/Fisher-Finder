@@ -114,8 +114,8 @@ const deleteListing = async (req, res) => {
 
 const listingByCity = async (req, res) => {
     try {
-        const city = req.params
-        const listings = await Listing.find(city)
+        const {id} = req.params
+        const listings = await Listing.find({city: id})
         return res.status(200).json({ listings })
     } catch (error) {
         return res.status(500).send(error.message)
