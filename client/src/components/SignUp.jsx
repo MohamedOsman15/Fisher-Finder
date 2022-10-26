@@ -11,8 +11,14 @@ const SignUp = () => {
     })
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const res = await axios.post('http://localhost:3001/users')
-        navigate('/home')
+        const res = await axios.post('http://localhost:3001/users', newUser)
+        .then((res) => {
+            return (res)
+        }) 
+        .catch((error) => {
+            return (error.message)
+        })
+        navigate('/')
     }
 
     const handleChange = (e) => (
