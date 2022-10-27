@@ -8,7 +8,7 @@ const Home = () => {
 
     useEffect(() => {
     const api = async () => {
-        let response = await axios.get('http://localhost:3001/city')
+        let response = await axios.get('/city')
         updateCities(response.data.cities)
     }
     api()

@@ -9,7 +9,7 @@ const City = () => {
 
     useEffect(() => {
         const api = async () => {
-            let response = await axios.get(`http://localhost:3001/listings/city/${id}`)
+            let response = await axios.get(`/listings/city/${id}`)
             updateSpots(response.data.listings)
         }
         api()

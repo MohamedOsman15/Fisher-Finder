@@ -11,7 +11,7 @@ const AddCity = () => {
     })
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const res = await axios.post('http://localhost:3001/city', newCity)
+        const res = await axios.post('/city', newCity)
         .then((res) => {
             return (res)
         }) 

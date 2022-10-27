@@ -14,7 +14,7 @@ const AddListing = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        const res = await axios.post('http://localhost:3001/listings', newListing)
+        const res = await axios.post('/listings', newListing)
         .then((res) => {
             return (res)
         }) 
