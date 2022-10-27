@@ -20,7 +20,7 @@ const Home = () => {
       <div className="gallery">
         {cities.map((city) => {
             return(
-            <div className='cities' key={city._id}>
+            <div className='cities' key={city._id} >
                 <Link to={`/${city._id}`}><img src={city.image} alt={city.city} width="500px" className='image'/> </Link>
                 <h3>{city.city}, {city.state}</h3>
             </div>

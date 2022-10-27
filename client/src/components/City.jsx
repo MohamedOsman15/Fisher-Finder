@@ -19,7 +19,7 @@ const City = () => {
     return(
         <div>
             <Link to={`/addlisting/${id}`}>Add listing</Link>
-            <h1 className='title'>Lakes</h1>
+            <h1 className='title'>Fishing Areas</h1>
       <div className="gallery">
         {spots.map((spot) => {
             return(

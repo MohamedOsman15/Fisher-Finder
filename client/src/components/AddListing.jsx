@@ -14,14 +14,14 @@ const AddListing = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        const res = await axios.post('http://localhost:3001/city', newListing)
+        const res = await axios.post('http://localhost:3001/listings', newListing)
         .then((res) => {
             return (res)
         }) 
         .catch((error) => {
             return (error.message)
         })
-        navigate('/')
+        navigate(`/${id}`)
     }
 
     const handleChange = (e) => (
