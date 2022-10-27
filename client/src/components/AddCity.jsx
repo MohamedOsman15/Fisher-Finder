@@ -29,7 +29,7 @@ const AddCity = () => {
             <h1>New City</h1>
             <p>City: <input type="text" value={newCity.city} onChange={handleChange} id="city"/></p>
             <p>State: <input type="text" value={newCity.state} onChange={handleChange} id="state"/></p>
-            <p>Image: <input type="text" value={newCity.image} onChange={handleChange} id="imgae"/></p>
+            <p>Image: <input type="text" value={newCity.image} onChange={handleChange} id="image"/></p>
             <button onClick={handleSubmit}>Submit</button>
         </div>
     )    
