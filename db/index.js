@@ -1,13 +1,13 @@
 const mongoose = require(`mongoose`)
 require('dotenv').config()
 
-const mongodb = process.env.MONGOODB_URL
+const mongodb = process.env.MONGODB_URI || 3001
 
 
-let MONGODB_URI = (mongodb)
+// let MONGODB_URI = (mongodb)
 
 mongoose
-    .connect(MONGODB_URI)
+    .connect(mongodb)
     .then(() => {
         console.log('Successfully connected to MongoDB')
     })
