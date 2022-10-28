@@ -24,7 +24,7 @@ function App() {
         <Route path='/addlisting/:id' element={ <AddListing />}/>
       </Routes>
       </main>
-      
+
     </div>
   );
 }

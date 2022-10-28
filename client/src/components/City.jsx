@@ -18,16 +18,19 @@ const City = () => {
 
     return(
         <div>
-            <Link to={`/addlisting/${id}`}>Add listing</Link>
+            <Link to={`/addlisting/${id}`} className="add">Add listing</Link>
+            
             <h1 className='title'>Fishing Areas</h1>
       <div className="gallery">
         {spots.map((spot) => {
             return(
-                <div key={spot._id}>
+                <div className='lakes' key={spot._id}>
                     <img src={spot.image} alt="thumbnail" className='image'/>
                     <h2>{spot.name}</h2>
+                    <div className='content'>
                     <h3>{spot.address}</h3>
-                </ div>
+                </div>
+                </div>
             )
         })}
     </div>
