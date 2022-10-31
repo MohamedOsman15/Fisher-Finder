@@ -27,6 +27,8 @@ const AddListing = () => {
     const handleChange = (e) => (
         setNewListing({...newListing, [e.target.id]: e.target.value})
     )
+
+
     return (
         <div className='addPage'>
             <h1>New Listing</h1>

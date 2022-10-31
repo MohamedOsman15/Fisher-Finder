@@ -6,6 +6,7 @@ import Nav from './components/Nav';
 import SignUp from './components/SignUp'
 import AddCity from './components/AddCity';
 import AddListing from './components/AddListing';
+import EditListing from './components/EditListing';
 
 
 
@@ -22,6 +23,7 @@ function App() {
         <Route path="/signup" element={ <SignUp /> }/>
         <Route path='/addcity' element={ <AddCity />}/>
         <Route path='/addlisting/:id' element={ <AddListing />}/>
+        <Route path='/listings/:id' element={ <EditListing />}/>
       </Routes>
       </main>
 

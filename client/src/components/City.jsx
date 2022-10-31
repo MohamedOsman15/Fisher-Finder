@@ -16,6 +16,8 @@ const City = () => {
     }, [])
     console.log(spots)
 
+    
+    
     return(
         <div>
             <Link to={`/addlisting/${id}`} className="add">Add listing</Link>
@@ -23,11 +25,25 @@ const City = () => {
             <h1 className='title'>Fishing Areas</h1>
       <div className="gallery">
         {spots.map((spot) => {
+            const rem = async (e) => {
+                e.preventDefault()
+        
+                const del = await axios.delete(`/listings/${spot._id}`)
+                .then((del) => {
+                    return (del)
+                })
+                .catch((error) => {
+                    return (error.message)
+                })
+                window.location.reload()
+            }
             return(
                 <div className='lakes' key={spot._id}>
                     <img src={spot.image} alt="thumbnail" className='image'/>
                     <h2>{spot.name}</h2>
                     <div className='content'>
+                    <Link to={`/listings/${spot._id}`}><button>Edit</button></Link>
+                    <button onClick={rem}>Delete</button>
                     <h3>{spot.address}</h3>
                 </div>
                 </div>

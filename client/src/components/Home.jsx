@@ -19,10 +19,23 @@ const Home = () => {
         <h1 className='title'>Cities</h1>
       <div className="gallery">
         {cities.map((city) => {
+                      const rem = async (e) => {
+                        e.preventDefault()
+                
+                        const del = await axios.delete(`/city/${city._id}`)
+                        .then((del) => {
+                            return (del)
+                        })
+                        .catch((error) => {
+                            return (error.message)
+                        })
+                        window.location.reload()
+                    }
             return(
             <div className='cities' key={city._id} >
                 <Link to={`/${city._id}`}><img src={city.image} alt={city.city} width="500px" className='image'/> </Link>
                 <h3>{city.city}, {city.state}</h3>
+                <button onClick={rem}>Delete City</button>
             </div>
         )})}
       </div>
