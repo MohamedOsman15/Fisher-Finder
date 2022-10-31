@@ -35,7 +35,8 @@ const Home = () => {
             <div className='cities' key={city._id} >
                 <Link to={`/${city._id}`}><img src={city.image} alt={city.city} width="500px" className='image'/> </Link>
                 <h3>{city.city}, {city.state}</h3>
-                <button onClick={rem}>Delete City</button>
+                <Link to={`/city/${city._id}`}><button>Edit</button></Link>
+                <button onClick={rem}>Delete</button>
             </div>
         )})}
       </div>
