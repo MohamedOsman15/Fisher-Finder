@@ -8,17 +8,9 @@ const EditListing = () => {
     
 
     
-    const [EditListing, setEditListing] = useState({
-        name: "",
-        address: "",
-        image: "",
-    })
+    const [EditListing, setEditListing] = useState({})
 
 
-    const call = async (e) => {
-    const listing = await axios.get(`/listings/${id}`)
-    setEditListing(listing.data.listing)
-    }
 
 
     console.log(EditListing)
